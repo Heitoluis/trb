@@ -93,6 +93,10 @@ nav .header {
   height: 40px;
 }
 
+.menu_mobile {
+  color: white;
+}
+
 .menu_desktop {
   display: none;
 }
