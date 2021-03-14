@@ -11,7 +11,10 @@ window.addEventListener("scroll", function (e) {
       bFixed = false;
     }
   } else {
-    if (document.documentElement.scrollTop > lastScrollPosition) {
+    if (
+      document.documentElement.scrollTop > lastScrollPosition &&
+      document.documentElement.scrollTop > 100
+    ) {
       document.getElementById("nav").style.opacity = 0;
       bFixed = true;
     }
