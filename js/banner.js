@@ -1,34 +1,40 @@
 var lastScrollPosition;
 var bFixed = false;
 
-var menu = document.getElementById("menu_icon");
-
 window.addEventListener("scroll", function (e) {
   if (bFixed === true) {
     if (document.documentElement.scrollTop < lastScrollPosition) {
       document.getElementById("nav").style.position = "fixed";
-      document.getElementById("nav").style.opacity = 1;
       bFixed = false;
     }
   } else {
-    if (
-      document.documentElement.scrollTop > lastScrollPosition &&
-      document.documentElement.scrollTop > 100
-    ) {
-      document.getElementById("nav").style.opacity = 0;
+    if (document.documentElement.scrollTop > lastScrollPosition) {
       bFixed = true;
     }
   }
 
   lastScrollPosition = document.documentElement.scrollTop;
-  console.log(document.documentElement.scrollTop);
 });
 
-var bmenuDisplayed = null;
+var menu = document.getElementById("menu_icon");
 
 menu.addEventListener("click", function (e) {
-  if (document.getElementById("nav").style.opacity == 0) return;
+  menuLayerShow();
+});
 
+var menuselection = document.querySelectorAll(
+  ".menu_desktop li, .menu__mobile__layer li"
+);
+
+menuselection.forEach(function (selection) {
+  selection.addEventListener("click", function (e) {
+    menuLayerShow();
+    console.log("sup");
+  });
+});
+
+var bmenuDisplayed = false;
+function menuLayerShow() {
   if (bmenuDisplayed === false) {
     document.getElementById("body").style.overflow = "auto";
     document.getElementById("menu__mobile__layer").style.visibility = "hidden";
@@ -48,4 +54,4 @@ menu.addEventListener("click", function (e) {
   }
 
   bmenuDisplayed = !bmenuDisplayed;
-});
+}

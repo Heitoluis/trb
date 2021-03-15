@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -57,7 +61,7 @@ img {
   width: 90%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0.75em 0;
+  padding: 0.75em 0 0.5em;
 }
 
 .flex {
@@ -76,7 +80,7 @@ img {
 
 nav {
   background: var(--transparent-blue);
-
+  position: fixed;
   right: 0;
   left: 0;
   z-index: 1;
@@ -84,13 +88,8 @@ nav {
   transition: all 0.5s;
 }
 
-nav .header {
-  padding: 0.25em;
-  text-align: center;
-}
-
 .logo img {
-  height: 40px;
+  height: 30px;
 }
 
 .menu_mobile {
@@ -102,7 +101,7 @@ nav .header {
 }
 
 .menu__mobile__layer {
-  margin-top: 4em;
+  margin-top: 3.2em;
   padding-top: 1em;
   background: var(--primary-color);
   height: 100vh;
@@ -184,8 +183,6 @@ nav .header {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-
-  margin-bottom: 5em;
 }
 
 .whoweare__text {
@@ -206,6 +203,7 @@ nav .header {
 
 .ourservices {
   color: var(--primary-color);
+  padding-top: 5em;
 }
 
 .ourservices__title {
