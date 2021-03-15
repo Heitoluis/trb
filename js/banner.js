@@ -28,13 +28,13 @@ var menuselection = document.querySelectorAll(
 
 menuselection.forEach(function (selection) {
   selection.addEventListener("click", function (e) {
-    bmenuDisplayed = true;
+    bmenuDisplayed = false;
     menuLayerShow();
     console.log("sup");
   });
 });
 
-var bmenuDisplayed = null;
+var bmenuDisplayed = true;
 function menuLayerShow() {
   if (bmenuDisplayed === false) {
     document.getElementById("body").style.overflow = "auto";
