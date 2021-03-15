@@ -28,6 +28,7 @@ var menuselection = document.querySelectorAll(
 
 menuselection.forEach(function (selection) {
   selection.addEventListener("click", function (e) {
+    bmenuDisplayed = true;
     menuLayerShow();
     console.log("sup");
   });
