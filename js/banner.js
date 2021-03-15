@@ -33,7 +33,7 @@ menuselection.forEach(function (selection) {
   });
 });
 
-var bmenuDisplayed = false;
+var bmenuDisplayed = null;
 function menuLayerShow() {
   if (bmenuDisplayed === false) {
     document.getElementById("body").style.overflow = "auto";
